@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+#content-form{
+    padding: 48px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    background: #dadada;
+}
+h1{
+    margin-bottom: 24px;
+    font-size: 48px;
+    color: #333;
+    width: 100%;
+    text-align: center;
+}
+.block-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "none none"
+                         "none none"
+                         "none none"
+                         "button button";
+    gap: 16px;
+    margin-top: 64px;
+    z-index: 10;
+}
+.form-group{
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+}
+label{
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #3a3f49;
+}
+input,select,textarea{
+    padding: 4px;
+    border: 1px solid #3a3f49;
+    outline: none;
+    border-radius: 8px;
+}
+select{
+    z-index: 15;
+}
+input:focus-visible,select:focus-visible,textarea:focus-visible{
+    border: 1px solid #00aeff;
+    box-shadow: 0 0 8px #00aeff
+}
+#result{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    padding: 48px;
+}
+input.inactive{
+    background: #9c9c9c90;
+    border: 1px solid #dfdfdf;
+}
+textarea{
+    width: 400px;
+    height: 400px;
+    resize: none;
+    top: 170px;
+}
+#submit:hover{
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid #0fafee;
+    transition: all 0.3s linear;
+}
+.submit{
+    z-index: 12;
+    grid-area: button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#submit{
+    padding: 12px;
+    font-weight: bold;
+    color: #3a3f49;
+    border-radius: 12px;
+    border: 1px solid #269cca;
+    background: #0fafee;
+}
+h2,textarea{
+    position: absolute;
+}
+h2{
+    top: 130px
+}
+
+@media screen and (max-width: 992px){
+    textarea{
+        position: relative;
+        width: 100%;
+        margin-top: 12px;
+    }
+    #result{
+        position: relative;
+    }
+    body{
+        background: #dadada;
+    }
+    input{
+        width: 100%;
+    }
+    h2{
+       width: 100%;
+         text-align: center;
+    }
+    #content-form{
+        height: auto;
+        align-items: center;
+    }
+    #submit{
+        margin-top: 32px;
+    }
+}
